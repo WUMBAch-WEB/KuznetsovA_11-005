@@ -1,3 +1,4 @@
+// Реализовать умножение матриц (алгоритм не должен зависеть от размера матрицы).
 import java.util.Scanner;
 class q31 {
 	public static void main (String[] args){
