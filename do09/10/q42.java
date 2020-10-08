@@ -1,8 +1,8 @@
-//Реализовать умножение матриц (алгоритм не должен зависеть от размера матрицы) и Вычислить определитель матрицы (2х2, 3х3).
+//Бинарный поиск
 
 
 import java.util.Scanner;
-class q41 {
+class q42 {
     public static void main (String[] args){
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число, которое необходимо найти в массиве:");
