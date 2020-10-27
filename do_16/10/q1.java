@@ -1,4 +1,4 @@
-//Количество разрядов числа
+//факториал
 import java.util.Scanner;
 class q1 {
     Scanner in = new Scanner(System.in);
