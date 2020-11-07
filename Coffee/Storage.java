@@ -1,8 +1,7 @@
 package Coffee;
 
 public class Storage{
-    Cappuccino cappuccino = new Cappuccino();
-    SelectedCoffee selectedCoffee = new SelectedCoffee();
+
     int bottleOfMilk = 3;
     int bottleOfWater = 3;
     int packOfCoffeeBeans = 3;
@@ -39,26 +38,27 @@ public class Storage{
         return this.coffeeBeans;
     }
 
-    public boolean checkMilk(){
+    public boolean checkMilk(SelectedCoffee selectedCoffee){
         boolean checkMilk = false;
         if (getMilk() >= selectedCoffee.getMilk()){
             checkMilk = true;
         }
         return checkMilk;
     }
-    public boolean checkWater(){
+    public boolean checkWater(SelectedCoffee selectedCoffee){
         boolean checkWater = false;
         if (getWater() >= selectedCoffee.getWater()){
             checkWater = true;
         }
         return checkWater;
     }
-    public boolean checkCoffeeBeans(){
+    public boolean checkCoffeeBeans(SelectedCoffee selectedCoffee){
         boolean checkCoffeeBeans = false;
         if (getCoffeeBeans() >= selectedCoffee.getCoffeeBeans()){
             checkCoffeeBeans = true;
         }
         return checkCoffeeBeans;
     }
+
 
 }
