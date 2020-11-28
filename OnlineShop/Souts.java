@@ -4,7 +4,7 @@ public abstract class Souts {
     public static void welcomeMessage() {
         System.out.println("Добро пожаловать в *ShopName*.");
         System.out.println("В нашем магизне Вы найдете множество различных товаров.");
-        System.out.println("Чтобы продолжить Вам необходимо авторизоваться или зарегестрироваться.");
+        System.out.println("Чтобы продолжить Вам необходимо авторизоваться или зарегистрироваться.");
         System.out.println("[1]Зарегистрироваться   [2]Авторизоваться   [3]Выход из системы");
     }
     public static void messageAboutFunctionsOfAdmin(){

@@ -49,7 +49,7 @@ public class UserPanel extends Souts {
         for (int i = 1; i <= engine.getBuyersList().size() - 1; i++){
             if ((engine.getBuyersList().get(i).getNickName()).equals(nickname)){
                 flag = true;
-                System.out.println("Укажите, что имеено вы хотите изменить: ");
+                System.out.println("Укажите, что именно вы хотите изменить: ");
                 System.out.println("[1]Изменить пароль   [2]Изменить никнейм   [3]Ничего не изменять");
                 int flag1 = in.nextInt();
                 if (flag1 == 1){

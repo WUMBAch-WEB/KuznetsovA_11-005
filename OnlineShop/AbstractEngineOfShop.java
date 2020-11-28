@@ -18,7 +18,7 @@ public class AbstractEngineOfShop extends Souts{
         Buyer buyer = new Buyer();
         buyersList.add(buyer);
         System.out.println("Вы успешно зарегестрированы.");
-        System.out.println("[1]Зарегестрироваться   [2]Авторизоваться");
+        welcomeMessage();
         choiceSignUpOrSignIn();
     }
     public void showAllBuyers(){
