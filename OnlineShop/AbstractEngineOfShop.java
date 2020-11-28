@@ -9,6 +9,7 @@ public class AbstractEngineOfShop extends Souts{
     private String ADMINpass = "ADMINpass";
     ArrayList<Buyer> buyersList =  new ArrayList<>();
     AdminPanel adminPanel = new AdminPanel(this);
+    UserPanel userPanel = new UserPanel(this);
     Buyer admin = new Buyer(ADMINnick, ADMINpass);
     public void addAdmin(){
         buyersList.add(admin);
@@ -26,8 +27,10 @@ public class AbstractEngineOfShop extends Souts{
         }
         System.out.println("Все пользователи выведены.");
         adminPanel.adminChoice();
-
     }
+
+
+
     public void choiceSignUpOrSignIn(){
         Scanner in = new Scanner(System.in);
         int flag = in.nextInt();
@@ -38,7 +41,7 @@ public class AbstractEngineOfShop extends Souts{
             signIn();
         }
         if (flag == 3){
-            showAllBuyers();
+            System.exit(0);
         }
     }
     public void signIn(){
@@ -56,9 +59,8 @@ public class AbstractEngineOfShop extends Souts{
             if ((buyersList.get(i).getNickName()).equals(nickName)){
                 if ((buyersList.get(i).getPassword()).equals(password)){
                     System.out.println("Вы успешно авторизованы.");
-                    System.out.println("Т.к. эта ветка в разработке, запускаем все с начала.");
                     flag = 1;
-                    choiceSignUpOrSignIn();
+                    userPanel.userChoice();
                 }
                 if (!((buyersList.get(i).getPassword()).equals(password))){
                     System.out.println("Неверный пароль, повторите попытку.");
@@ -67,9 +69,12 @@ public class AbstractEngineOfShop extends Souts{
             }
         }
         if (flag == 0){
-            System.out.println("Акк не найден");
+            System.out.println("Аккаунт не найден");
         }
 
+    }
+    public ArrayList<Buyer> getBuyersList(){
+        return buyersList;
     }
 //    public void signIn(){
 //        Scanner in = new Scanner(System.in);

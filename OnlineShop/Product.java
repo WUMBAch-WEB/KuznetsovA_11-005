@@ -13,11 +13,14 @@ public class Product {
         System.out.print("Введите цену товара: ");
         this.price = in.nextInt();
         System.out.print("Укажите производителя товара: ");
-        this.producer = in.nextLine();
+        this.producer = in.next();
     }
     public void showInfoAboutProduct(){
         System.out.println("Название товара: " + this.nameOfProduct);
         System.out.println("Цена: " + this.price);
         System.out.println("Производитель: " + this.producer);
+    }
+    public String getNameOfProduct(){
+        return this.nameOfProduct;
     }
 }
