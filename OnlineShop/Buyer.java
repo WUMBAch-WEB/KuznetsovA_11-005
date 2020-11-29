@@ -36,6 +36,7 @@ public class Buyer {
  public String getPassword(){
      return this.password;
  }
+ public String getUserName() { return  this.userName; }
 
  public void setPassword(String password) {
      this.password = password;
@@ -44,4 +45,5 @@ public class Buyer {
  public void setNickName(String nickName) {
      this.nickName = nickName;
  }
+
 }

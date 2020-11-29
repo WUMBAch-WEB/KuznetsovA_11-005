@@ -10,6 +10,7 @@ public class AbstractEngineOfShop extends Souts{
     ArrayList<Buyer> buyersList =  new ArrayList<>();
     AdminPanel adminPanel = new AdminPanel(this);
     UserPanel userPanel = new UserPanel(this);
+    Order order = new Order(this);
     Buyer admin = new Buyer(ADMINnick, ADMINpass);
     public void addAdmin(){
         buyersList.add(admin);

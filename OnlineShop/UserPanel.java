@@ -27,7 +27,7 @@ public class UserPanel extends Souts {
             setNewInfoOfAccount();
         }
         if (flag == 5){
-            System.out.println("??????????");
+            toBuy();
             userChoice();
         }
         if (flag == 6){
@@ -93,5 +93,9 @@ public class UserPanel extends Souts {
             System.out.println("Аккаунт с таким никнеймом не найден.");
             userChoice();
         }
+    }
+    public void toBuy(){
+        Order order  = new Order();
+        order.showInfoAboutOrder();
     }
 }
