@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class AdminPanel extends Souts{
     AbstractEngineOfShop engine;
     ArrayList<Product> productsList = new ArrayList<>();
+    UserPanel userPanel;
     private String nickName;
     private String password;
     private String nameOfProduct;

@@ -1,16 +1,20 @@
 package OnlineShop;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserPanel extends Souts {
     AbstractEngineOfShop engine;
     AdminPanel adminPanel = new AdminPanel();
+    ArrayList<Product> historyOfOrdersList = new ArrayList<>();
     private String nickname;
     private String password;
     private String newNickname;
     private String newPassword;
-    public UserPanel(AbstractEngineOfShop engine){
+    private String nicknameForHistory;
+    public UserPanel(AbstractEngineOfShop engine, AdminPanel adminPanel){
         this.engine = engine;
+        this.adminPanel = adminPanel;
     }
     public void exitFromUserAccount(){
         welcomeMessage();
@@ -22,6 +26,9 @@ public class UserPanel extends Souts {
         int flag = in.nextInt();
         if (flag == 1){
             showAllProducts();
+        }
+        if (flag == 3){
+            showHistoryOfOrders();
         }
         if (flag == 4){
             setNewInfoOfAccount();
@@ -95,7 +102,27 @@ public class UserPanel extends Souts {
         }
     }
     public void toBuy(){
-        Order order  = new Order();
-        order.showInfoAboutOrder();
+        Order order  = new Order(engine, adminPanel);
+        for (int i = 1; i <= engine.getBuyersList().size() - 1; i++){
+            if ((engine.getBuyersList().get(i).getNickName()).equals(order.recipient)){
+                engine.getBuyersList().get(i).getHistoryOfOrdersList().add(order);
+            }
+        }
+        System.out.println("Заказ успешно оформлен.");
+    }
+    public void showHistoryOfOrders(){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Пожалуйста, укажите свой никнейм повторно: ");
+        nicknameForHistory = in.next();
+        for (int i = 1; i <= engine.getBuyersList().size() - 1; i++){
+            if ((engine.getBuyersList().get(i).getNickName()).equals(nicknameForHistory)){
+                for (int j = 0;  j <= engine.getBuyersList().get(i).getHistoryOfOrdersList().size() - 1; j++){
+                    System.out.println("Заказ №" + j);
+                    engine.getBuyersList().get(i).getHistoryOfOrdersList().get(j).showInfoAboutOrder();
+                }
+            }
+        }
+        System.out.println("Это все ваши заказы.");
+        userChoice();
     }
 }

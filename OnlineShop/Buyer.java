@@ -5,11 +5,11 @@ public class Buyer {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
-    ArrayList<Buyer> buyersList =  new ArrayList<>();
     private  String userName;
     private  String nickName;
     private  String sex;
     private String password;
+    ArrayList<Order> historyOfOrdersList;
     Scanner in = new Scanner(System.in);
  public Buyer(){
      System.out.print("Введите Ваше ФИО: ");
@@ -20,6 +20,7 @@ public class Buyer {
      this.sex = in.nextLine();
      System.out.print("Придумайте пароль: ");
      this.password = in.nextLine();
+     historyOfOrdersList = new ArrayList<>();
  }
  public Buyer(String nickName, String password){
      this.nickName = nickName;
@@ -37,6 +38,9 @@ public class Buyer {
      return this.password;
  }
  public String getUserName() { return  this.userName; }
+ public ArrayList<Order> getHistoryOfOrdersList(){
+     return historyOfOrdersList;
+ }
 
  public void setPassword(String password) {
      this.password = password;

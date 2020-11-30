@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Order {
-    ArrayList<Product> historyOfOrdersList = new ArrayList<>();
     AbstractEngineOfShop engine;
     AdminPanel adminPanel;
     private String status;
-    private String recipient;
+    String recipient;
     private String priceOfProduct;
     private String nameOfProduct;
     private String producerOfProduct;
@@ -31,7 +30,7 @@ public class Order {
             System.out.println("Продукт с таким названием не найден.");
         }
     }
-    public void  setRecipient(){
+    public String  setRecipient(){
         Scanner in = new Scanner(System.in);
         System.out.print("Укажите ваш никнейм: ");
         setRecipient = in.next();
@@ -40,18 +39,20 @@ public class Order {
             if ((engine.getBuyersList().get(i).getNickName()).equals(setRecipient)){
                 flag = true;
                 recipient = engine.getBuyersList().get(i).getUserName();
+                return recipient;
             }
         }
         if (!flag){
             System.out.println("Аккаунт с таким никнеймом не найден.");
         }
+        return null;
     }
     public Order(AbstractEngineOfShop engine,  AdminPanel adminPanel){
         this.engine = engine;
         this.adminPanel = adminPanel;
         this.status = "Ожидает оплаты";
         this.setDataForOrder();
-        this.setRecipient();
+        this.recipient = setRecipient();
     }
     public void showInfoAboutOrder(){
         System.out.println("О товаре: ");
