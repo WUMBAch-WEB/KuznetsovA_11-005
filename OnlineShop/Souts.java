@@ -17,7 +17,7 @@ public abstract class Souts {
     public static void messageAboutFunctionsOfUser(){
         System.out.println("Доступные функции: ");
         System.out.println("[1]Посмотреть ассортимент  [X]Перейти в корзину");
-        System.out.println("[X]История моих покупок    [4]Изменить данные аккаунта");
-        System.out.println("[X]???????????????         [6]Выйти из аккаунта");
+        System.out.println("[3]История моих покупок    [4]Изменить данные аккаунта");
+        System.out.println("[5]Сделать заказ           [6]Выйти из аккаунта");
     }
 }

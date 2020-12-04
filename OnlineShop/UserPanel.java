@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class UserPanel extends Souts {
     AbstractEngineOfShop engine;
     AdminPanel adminPanel = new AdminPanel();
-    ArrayList<Product> historyOfOrdersList = new ArrayList<>();
     private String nickname;
     private String password;
     private String newNickname;
@@ -104,7 +103,7 @@ public class UserPanel extends Souts {
     public void toBuy(){
         Order order  = new Order(engine, adminPanel);
         for (int i = 1; i <= engine.getBuyersList().size() - 1; i++){
-            if ((engine.getBuyersList().get(i).getNickName()).equals(order.recipient)){
+            if ((engine.getBuyersList().get(i).getUserName()).equals(order.recipient)){
                 engine.getBuyersList().get(i).getHistoryOfOrdersList().add(order);
             }
         }
@@ -119,10 +118,33 @@ public class UserPanel extends Souts {
                 for (int j = 0;  j <= engine.getBuyersList().get(i).getHistoryOfOrdersList().size() - 1; j++){
                     System.out.println("Заказ №" + j);
                     engine.getBuyersList().get(i).getHistoryOfOrdersList().get(j).showInfoAboutOrder();
+                    System.out.println("Это все ваши заказы.");
+                    userChoice();
                 }
             }
         }
-        System.out.println("Это все ваши заказы.");
-        userChoice();
+        System.out.println("хуйца сосни, в for не заходит");
     }
 }
+
+/*
+1
+Kuznetsov
+WUMBAch
+m
+123
+2
+ADMINnick
+ADMINpass
+3
+Redmi9
+10k
+xiaomi
+7
+2
+WUMBAch
+123
+5
+Redmi9
+WUMBAch
+ */
