@@ -54,7 +54,7 @@ public class DataBase {
             System.out.print("");
         }
         else {
-        for (int i =0; i <= studentsList.size(); i++){
+        for (int i =0; i <= studentsList.size() - 1; i++){
             if ((studentsList.get(i).getNickname()).equals(nickname)){
                 System.out.println("Аккаунт с таким никнеймом уже существует, повторите попытку.");
                 setInfoAboutStudent();
@@ -67,7 +67,7 @@ public class DataBase {
             System.out.println("");
         }
         else{
-            for (int i = 0; i <= teachersList.size(); i++){
+            for (int i = 0; i <= teachersList.size() - 1; i++){
                 System.out.println("Аккаунт с таким никнеймом уже существует, повторите попытку.");
                 setInfoAboutTeacher();
             }

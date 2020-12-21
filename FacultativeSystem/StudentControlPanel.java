@@ -17,7 +17,8 @@ public class StudentControlPanel {
                 studentChoice();
                 break;
             case "2" :
-                System.out.println("В разработке.");
+                profile.showMyCourses();
+                studentChoice();
                 break;
             case "3" :
                 System.out.println("В разработке.");

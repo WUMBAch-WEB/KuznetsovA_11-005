@@ -9,6 +9,7 @@ public class Course {
     private String countOfHomeWorks;
     private String descriptionOfCourse;
     private String durationOfCourse;
+    ArrayList<Student>  subscribersList;
     public Course(String themeOfCourse, String costOfCourse, String countOfHomeWorks, String countOfWebs, String descriptionOfCourse, String durationOfCourse){
         this.themeOfCourse = themeOfCourse;
         this.costOfCourse = costOfCourse;
@@ -16,7 +17,7 @@ public class Course {
         this.countOfWebs = countOfWebs;
         this.descriptionOfCourse = descriptionOfCourse;
         this.durationOfCourse = durationOfCourse;
-        ArrayList<Student>  subscribersList = new ArrayList<>();
+        this.subscribersList = new ArrayList<>();
     }
     public void showInfoAboutCourse(){
         System.out.println("Тема курса: " + this.themeOfCourse);
@@ -25,5 +26,11 @@ public class Course {
         System.out.println("Количество онлайн занятий: " + this.countOfWebs);
         System.out.println("Количество домашних заданий: " + this.countOfHomeWorks);
         System.out.println("Подробное описание курса: " + this.descriptionOfCourse);
+    }
+    public String getThemeOfCourse(){
+        return this.themeOfCourse;
+    }
+    public ArrayList<Student> getSubscribersList(){
+        return this.subscribersList;
     }
 }

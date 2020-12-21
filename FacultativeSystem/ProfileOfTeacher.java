@@ -49,6 +49,7 @@ public class ProfileOfTeacher {
             for (int i = 0; i <= myCoursesList.size() - 1; i++){
                 System.out.println("Курс №" + (i+1));
                 myCoursesList.get(i).showInfoAboutCourse();
+                for (int j = 0)
             }
             System.out.println("Все курсы успешно выведены ");
         }
