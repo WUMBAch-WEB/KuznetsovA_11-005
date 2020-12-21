@@ -4,9 +4,14 @@ import java.util.Scanner;
 
 public class Platform {
     Scanner in = new Scanner(System.in);
-    DataBase dataBase;
+    private static DataBase dataBase;
     private String nickname;
     private String password;
+
+    static public void createDataBase(){
+        dataBase = new DataBase();
+    }
+
     public void welcome(){
         System.out.println("Добро пожаловать на нашу платформу обучения");
         System.out.println("Спасибо за Ваш выбор");
@@ -43,7 +48,7 @@ public class Platform {
                 if ((dataBase.teachersList.get(i).getPassword()).equals(password)){
                     System.out.println("Вы успешно авторизованы, как преподователь");
                     flag = 1;
-                    dataBase.teachersList.get(i).getContolPanel().teacherChoice();
+                    dataBase.teachersList.get(i).getControlPanel().teacherChoice();
                 }
                 if (!((dataBase.teachersList.get(i).getPassword()).equals(password))){
                     System.out.println("Неверный пароль, повторите попытку");
@@ -67,8 +72,7 @@ public class Platform {
                 if ((dataBase.studentsList.get(i).getPassword()).equals(password)){
                     System.out.println("Вы успешно авторизованы, как ученик");
                     flag = 1;
-                    System.out.println("Дальше ничего нет, поэтому начнем сначала");
-                    welcome();
+                    dataBase.studentsList.get(i).getControlPanel().studentChoice();
                 }
                 if (!((dataBase.studentsList.get(i).getPassword()).equals(password))){
                     System.out.println("Неверный пароль, повторите попытку");
@@ -82,7 +86,7 @@ public class Platform {
         }
     }
 
-    public void setDataBase(DataBase dataBase){
-        this.dataBase = dataBase;
+    static public DataBase getDataBase() {
+        return dataBase;
     }
 }

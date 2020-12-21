@@ -45,7 +45,7 @@ public class DataBase {
             setInfoAboutTeacher();
             Teacher teacher = new Teacher(nameOfTeacher, ageOfTeacher, emailOfTeacher, passwordOfTeacher,
                     descriptionOfTeacher, specificationOfTeacher, experienceOfTeacher, nickname);
-            teacher.setDataBase(this);
+
             teachersList.add(teacher);
         }
     }
@@ -115,20 +115,20 @@ public class DataBase {
         System.out.print("Введите Ваш пароль: ");
         passwordOfTeacher = in.next();
     }
-    public void setInfoAboutCourse(){
-        System.out.print("Введите тему курса: ");
-        themeOfCourse = in.next();
-        System.out.print("Введите стоимость курса: ");
-        costOfCourse = in.next();
-        System.out.print("Введите количество онлайн-занятий:");
-        countOfWebs = in.next();
-        System.out.print("Введите количество домашних заданий: ");
-        countOfHomeWorks = in.next();
-        System.out.print("Введите описание курса: ");
-        descriptionOfCourse = in.next();
-        System.out.print("Введите продолжительность курса в днях: ");
-        durationOfCourse = in.next();
-    }
+//    public void setInfoAboutCourse(){
+//        System.out.print("Введите тему курса: ");
+//        themeOfCourse = in.next();
+//        System.out.print("Введите стоимость курса: ");
+//        costOfCourse = in.next();
+//        System.out.print("Введите количество онлайн-занятий:");
+//        countOfWebs = in.next();
+//        System.out.print("Введите количество домашних заданий: ");
+//        countOfHomeWorks = in.next();
+//        System.out.print("Введите описание курса: ");
+//        descriptionOfCourse = in.next();
+//        System.out.print("Введите продолжительность курса в днях: ");
+//        durationOfCourse = in.next();
+//    }
     public ArrayList<Course> getCoursesList(){
         return coursesList;
     }

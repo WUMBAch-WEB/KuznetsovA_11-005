@@ -12,12 +12,14 @@ public class Student {
     private String emailOfStudent;
     private String nickname;
     private String passwordOfTStudent;
+    StudentControlPanel controlPanel;
     public Student(String nameOfStudent, String ageOfStudent, String emailOfStudent, String nickname, String passwordOfTStudent){
         this.nameOfStudent = nameOfStudent;
         this.ageOfStudent = ageOfStudent;
         this.emailOfStudent = emailOfStudent;
         this.nickname = nickname;
         this.passwordOfTStudent = passwordOfTStudent;
+        controlPanel = new StudentControlPanel();
     }
     public void showInfoAboutStudent(){
         System.out.println("Имя: " + this.nameOfStudent);
@@ -31,5 +33,8 @@ public class Student {
     }
     public String getPassword(){
         return this.passwordOfTStudent;
+    }
+    public StudentControlPanel getControlPanel(){
+        return controlPanel;
     }
 }

@@ -12,7 +12,7 @@ public class Teacher {
     private String experienceOfTeacher;
     private String nickname;
     TeacherControlPanel controlPanel;
-    DataBase dataBase;
+
     public Teacher(String nameOfTeacher, String ageOfTeacher, String emailOfTeacher, String passwordOfTeacher, String descriptionOfTeacher, String specificationOfTeacher, String experienceOfTeacher, String nickname){
         this.nameOfTeacher = nameOfTeacher;
         this.nickname =  nickname;
@@ -23,8 +23,7 @@ public class Teacher {
         this.specificationOfTeacher = specificationOfTeacher;
         this.experienceOfTeacher = experienceOfTeacher;
         controlPanel =  new TeacherControlPanel();
-        controlPanel.setDataBase(dataBase);
-        controlPanel.setProfile();
+
     }
     public void showInfoAboutTeacher(){
         System.out.println("Имя: " + this.nameOfTeacher);
@@ -36,16 +35,16 @@ public class Teacher {
         System.out.println("nick suka " + this.nickname);
         System.out.println("пас " + this.passwordOfTeacher);
     }
-    public void setDataBase(DataBase dataBase){
-        this.dataBase = dataBase;
+
+    public TeacherControlPanel getControlPanel() {
+        return controlPanel;
     }
+
     public String getNickname(){
         return this.nickname;
     }
     public String getPassword(){
         return this.passwordOfTeacher;
     }
-    public TeacherControlPanel getContolPanel(){
-        return this.controlPanel;
-    }
+
 }

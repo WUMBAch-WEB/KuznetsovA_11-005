@@ -1,5 +1,7 @@
 package FacultativeSystem;
 
+import java.util.ArrayList;
+
 public class Course {
     private String themeOfCourse;
     private String costOfCourse;
@@ -14,5 +16,14 @@ public class Course {
         this.countOfWebs = countOfWebs;
         this.descriptionOfCourse = descriptionOfCourse;
         this.durationOfCourse = durationOfCourse;
+        ArrayList<Student>  subscribersList = new ArrayList<>();
+    }
+    public void showInfoAboutCourse(){
+        System.out.println("Тема курса: " + this.themeOfCourse);
+        System.out.println("Стоимость курса: " + this.costOfCourse);
+        System.out.println("Продолжительность курса: " + this.durationOfCourse);
+        System.out.println("Количество онлайн занятий: " + this.countOfWebs);
+        System.out.println("Количество домашних заданий: " + this.countOfHomeWorks);
+        System.out.println("Подробное описание курса: " + this.descriptionOfCourse);
     }
 }
