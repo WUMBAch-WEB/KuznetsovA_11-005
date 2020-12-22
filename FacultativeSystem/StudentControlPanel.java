@@ -7,8 +7,8 @@ public class StudentControlPanel {
     ProfileOfStudent profile = new ProfileOfStudent();
     public void studentChoice(){
         System.out.println("Для продолжения необходимо сделать выбор: ");
-        System.out.println("[1]Узнать доступные курсы   [2]Мои курсы         [3]Мои оценки  ");
-        System.out.println("[4]Изменить личные данные   [5]Проверить почту   [6]Написать письмо");
+        System.out.println("[1]Узнать доступные курсы   [2]Мои курсы         [х]хххххх  ");
+        System.out.println("[х]Изменить личные данные   [х]Проверить почту   [х]Написать письмо");
         System.out.println("                            [7]Выйти из аккаунта");
         String choice = in.next();
         switch (choice){

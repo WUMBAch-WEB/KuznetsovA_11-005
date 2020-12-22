@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Course {
     private String themeOfCourse;
     private String costOfCourse;
-    private String countOfWebs;
-    private String countOfHomeWorks;
+    private Integer countOfWebs;
+    private Integer countOfHomeWorks;
     private String descriptionOfCourse;
-    private String durationOfCourse;
+    private Integer durationOfCourse;
     ArrayList<Student>  subscribersList;
-    public Course(String themeOfCourse, String costOfCourse, String countOfHomeWorks, String countOfWebs, String descriptionOfCourse, String durationOfCourse){
+    public Course(String themeOfCourse, String costOfCourse, Integer countOfHomeWorks, Integer countOfWebs, String descriptionOfCourse, Integer durationOfCourse){
         this.themeOfCourse = themeOfCourse;
         this.costOfCourse = costOfCourse;
         this.countOfHomeWorks = countOfHomeWorks;
@@ -32,5 +32,8 @@ public class Course {
     }
     public ArrayList<Student> getSubscribersList(){
         return this.subscribersList;
+    }
+    public Integer getDurationOfCourse(){
+        return this.durationOfCourse;
     }
 }
