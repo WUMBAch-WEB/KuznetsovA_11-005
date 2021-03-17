@@ -45,7 +45,7 @@ public class SecondTask {
             if (array[i].equals("/")){
                 int x = stack.pop();
                 int y = stack.pop();
-                int z = x / y;
+                int z = y / x;
                 stack.add(z);
             }
         }
