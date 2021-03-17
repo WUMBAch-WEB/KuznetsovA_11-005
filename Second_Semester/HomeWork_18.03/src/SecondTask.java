@@ -19,25 +19,8 @@ public class SecondTask
     }
 
     static String[] cleanArray(String purchase){
-        for (int i = 0; i < purchase.length(); i++){
-            boolean flag1 = false;
-            boolean flag2 = false;
-            boolean flag3 = false;
-            if (purchase.charAt(i) == ',' && flag1 == false){
-                purchase = purchase.replaceAll(",", " ");
-                flag1 = true;
-            }
-            if (purchase.charAt(i) == '.' && flag2 == false){
-                purchase = purchase.replaceAll(".", " ");
-                flag2 = true;
-            }
-            if (purchase.charAt(i) == '!' && flag3 == false){
-                purchase = purchase.replaceAll("!", " ");
-                flag3 = true;
-            }
-        }
-        purchase = purchase.replaceAll("  ", " ");
-        String[] array = purchase.split(" ");
+        String fixedStr = purchase.replaceAll("[:.,!\\\"]", " ");
+        String[] array = fixedStr.split("\\s+");
         for (int i = 0; i < array.length; i++){
             if (!tryParseInt(array[i])){
                 array[i] = array[i].toLowerCase(Locale.ROOT);
@@ -85,19 +68,19 @@ public class SecondTask
         while (flag) {
             System.out.println("Выберите необходимое действие: ");
             System.out.println("[1]Добавить покупку [2]Вывести общий список покупок [3]Завершить работу программы");
-            int choice = in.nextInt();
+            String choice = in.nextLine();
             switch (choice) {
-                case 1:
+                case "1":
                     System.out.println("Введите покупку ниже: ");
                     System.out.println("Обратите внимание, что строка должна быть следующей формы: ");
                     System.out.println("Покупатель товар кол-во");
                     String purchase = buff.readLine();
                     addNewPurchase(purchase, buyerAndPurchases);
                     break;
-                case 2:
+                case "2":
                     System.out.println(buyerAndPurchases);
                     break;
-                case 3:
+                case "3":
                     flag = false;
                     break;
                 default:
