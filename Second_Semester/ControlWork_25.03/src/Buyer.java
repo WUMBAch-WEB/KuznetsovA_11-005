@@ -18,7 +18,8 @@ public class Buyer {
         return (ArrayList<City>) cities;
     }
 
-    public void toString(){
+    public String toString(){
+        return "Покупатель: " + name + cities;
 
     }
 }

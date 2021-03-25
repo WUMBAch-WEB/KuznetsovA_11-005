@@ -14,7 +14,8 @@ public class Order {
         this.name = name;
         this.count = count;
     }
-    public void incCount(int count){
-        this.count += count;
+
+    public String toString(){
+        return "Покупка: " + name + " | " + "Кол-во: " + count;
     }
 }

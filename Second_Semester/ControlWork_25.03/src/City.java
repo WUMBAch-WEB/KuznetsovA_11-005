@@ -17,4 +17,8 @@ public class City {
     public ArrayList<Order> getOrders() {
         return orders;
     }
+
+    public String toString(){
+        return "Город: " + name + orders;
+    }
 }
