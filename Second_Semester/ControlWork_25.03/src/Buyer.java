@@ -17,4 +17,8 @@ public class Buyer {
     public ArrayList<City> getCities(Map<String, Map<String, Integer>> cities) {
         return (ArrayList<City>) cities;
     }
+
+    public void toString(){
+
+    }
 }

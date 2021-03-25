@@ -5,8 +5,9 @@ public class City {
     String name;
     ArrayList<Order> orders = new ArrayList<>();
 
-    public City(String name){
+    public City(String name, ArrayList<Order> orders){
         this.name = name;
+        this.orders = orders;
     }
 
     public String getName() {

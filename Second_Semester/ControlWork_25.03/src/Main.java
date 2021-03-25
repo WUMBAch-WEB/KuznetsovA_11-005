@@ -7,8 +7,20 @@ import java.util.Map;
 
 public class Main {
 
+    public static ArrayList<Order> getOrders(Map<String, Integer> orders){
+        ArrayList<Order> orderArrayList = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : orders.entrySet()){
+            orderArrayList.add(new Order(entry.getKey(), entry.getValue()));
+        }
+        return orderArrayList;
+    }
+
     public static ArrayList<City> getCities(Map<String, Map<String, Integer>> cities) {
-        return (ArrayList<City>) cities;
+        ArrayList<City> cityArrayList = new ArrayList<>();
+        for (Map.Entry<String, Map<String, Integer>> entry : cities.entrySet()){
+            cityArrayList.add(new City(entry.getKey(), getOrders(entry.getValue())));
+        }
+        return cityArrayList;
     }
 
     public static void main(String[] args) throws IOException {
@@ -45,6 +57,9 @@ public class Main {
         }
         for (Map.Entry<String, Map<String, Map<String, Integer>>> entry : buyers.entrySet()) {
             buyersArrayList.add(new Buyer(entry.getKey(), getCities(entry.getValue())));
+        }
+        for (int i = 0; i < buyersArrayList.size(); i ++){
+            System.out.println(buyersArrayList.get(i));
         }
     }
 }
