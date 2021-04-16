@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class Bot {
     private HashMap<String, Method> commands;
-
+    BotCommands commands1 = new BotCommands();
     public Bot() {
         commands = new HashMap<>();
 
@@ -18,7 +18,7 @@ public class Bot {
 
             Command cmd = m.getAnnotation(Command.class);
 
-            if(cmd.inProgress())
+            if(!cmd.inProgress())
                 continue;
 
             for (String name : cmd.aliases())
@@ -41,9 +41,11 @@ public class Bot {
             return "Я вас не понимаю";
 
         try {
-            return (String) m.invoke(this, (Object) args);
+            return (String) m.invoke(commands1, (Object) args);
         } catch (Exception e) {
-            return "Что-то пошло не так, попробуйте ещё раз";
+            e.printStackTrace();
+            return "Что-то пошло не так, попробуйте ещё раз во время вызова метода";
+
         }
 
 
