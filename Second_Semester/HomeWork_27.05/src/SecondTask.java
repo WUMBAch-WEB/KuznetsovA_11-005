@@ -12,7 +12,7 @@ public class SecondTask extends Thread{
 
     static class MyThread1 extends Thread {
         @Override
-        public void run() { // even words
+        public void run() {
             for (int i = index; i < firstList.size(); i++){
                 index++;
                 if (String.valueOf(firstList.get(i)).chars().distinct().count() % 2 == 1){
@@ -31,7 +31,7 @@ public class SecondTask extends Thread{
 
     static class MyThread2 extends Thread {
         @Override
-        public void run() { // even words
+        public void run() {
             for (int i = index; i < firstList.size(); i++){
                 index++;
                 if (String.valueOf(firstList.get(i)).chars().distinct().count() % 2 == 0){
