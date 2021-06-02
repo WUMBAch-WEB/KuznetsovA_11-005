@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.stream.Stream;
 
 public class SecondTask extends Thread{
     static volatile ArrayList evenWords = new ArrayList();
@@ -54,10 +56,10 @@ public class SecondTask extends Thread{
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String line = bufferedReader.readLine();
         while (line != null){
+
             String[] strings = line.toLowerCase(Locale.ROOT).split(" ");
-            for (int i = 0; i < strings.length; i++){
-                firstList.add(strings[i]);
-            }
+            Stream<String> stream = Arrays.stream(strings);
+
             line = bufferedReader.readLine();
         }
         MyThread1 threadN1 = new MyThread1();
@@ -80,4 +82,5 @@ public class SecondTask extends Thread{
             }
         }
     }
+
 }
