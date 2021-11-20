@@ -1,0 +1,10 @@
+POST http://localhost:8080/signUp/json
+Content-Type: application/json
+
+{
+  "firstName" : "Петя",
+  "lastName" : "Иванов",
+  "age" : "50",
+  "email" : "sobaka124@mail.ru",
+  "password" : "qwerty123"
+}
